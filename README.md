@@ -150,4 +150,106 @@ function showWeatherReport(weather) {
 2.Fetches weather data from the OpenWeatherMap API and displays it on the interface.
 
 
+Error Handling:
+
+function showWeatherReport(weather) {
+    let city_code = weather.cod;
+    if (city_code === '400') {
+        // Display error message for empty input
+        swal("Empty Input", "Please enter any city", "error");
+        reset(); // Reset input box
+    } else if (city_code === '404') {
+        // Display error message for invalid city name
+        swal("Bad Input", "Entered city didn't match", "warning");
+        reset(); // Reset input box
+    } else {
+        // Display weather information on the interface
+    }
+}
+
+
+1.Handles error scenarios such as empty input or invalid city names.
+2.Uses the SweetAlert library to display user-friendly error messages.
+3.Resets the input box after displaying the error message.
+
+Background Image Update:
+
+
+function showWeatherReport(weather) {
+    // Display weather information dynamically in HTML
+
+    // Update background image based on weather condition
+    changeBg(weather.weather[0].main);
+}
+
+function changeBg(status) {
+    // Update background image based on weather condition
+}
+
+
+1.Dynamically updates the background image of the application based on the current weather condition.
+2.Different background images are associated with different weather conditions to enhance the visual appeal of the interface
+
+
+Media Query:
+
+
+
+@media screen and (max-width: 800px) {
+  .app-main {
+    width: 95%;
+    padding: 10px;
+  }
+  body {
+    min-height: 94vh;
+  }
+}
+
+
+
+1.Applies responsive styles when the screen width is less than or equal to 800px.
+2.Adjusts the width and padding of the main container to ensure better usability on smaller devices.
+
+
+
+Utility Functions:
+
+
+// Function to format the last update time
+function getTime(todayDate) {
+    let hour = addZero(todayDate.getHours());
+    let minute = addZero(todayDate.getMinutes());
+    return `${hour}:${minute}`;
+}
+
+// Function to format the date
+function dateManage(dateArg) {
+    // Format the date
+}
+
+// Function to dynamically change the background based on weather condition
+function changeBg(status) {
+    // Change background image based on weather condition
+}
+
+// Function to get the class name of the weather icon based on weather condition
+function getIconClass(classarg) {
+    // Return class name of weather icon based on condition
+}
+
+// Function to reset the input box
+function reset() {
+    // Clear input box
+}
+
+// Function to add zero to single-digit numbers for formatting time
+function addZero(i) {
+    // Add zero if the number is single-digit
+}
+
+
+1.Provides utility functions for various tasks such as formatting date and time, resetting input box, and adding zero to single-digit numbers.
+2.These functions enhance the readability and maintainability of the code by encapsulating repetitive tasks into reusable functions.
+
+
 
