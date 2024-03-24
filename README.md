@@ -1,8 +1,8 @@
-﻿# weatherwebappwithCOD4596
+﻿# weatherforecastwebappwithCOD4596
 
 
 
-Weather Application Documentation
+Weather Forecast Application Documentation
 
 Introduction:
 The Weather Application is a web-based tool designed to provide users with current weather information for a specified city. It fetches data from the OpenWeatherMap API and dynamically displays it on the user interface. The application features a simple and intuitive interface for ease of use.
