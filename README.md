@@ -48,3 +48,106 @@ Press Enter to fetch weather data for the specified city.
 View the dynamically updated weather information displayed on the interface.
 Conclusion:
 The Weather Application provides a convenient way for users to access current weather information for any city. With its intuitive interface, error handling capabilities, and dynamic content generation, the application offers a seamless user experience.
+
+HTML Structure:
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Meta tags and title -->
+  </head>
+  <body>
+    <!-- Main container for the application -->
+    <div class="app-main">
+      <!-- Header -->
+      <div class="header">
+        <h4>Get Weather</h4>
+      </div>
+      <!-- Search input box -->
+      <div class="searchInputBox">
+        <input type="text" name="" id="input-box" class="input-box" placeholder="enter city name" />
+      </div>
+      <!-- Container for weather information -->
+      <div class="weather-body" id="weather-body">
+        <!-- Weather information will be appended here -->
+      </div>
+    </div>
+    <!-- Script tags for JavaScript files -->
+  </body>
+</html>
+
+1.Defines the basic structure of the weather application interface.
+2.Consists of a header, input box for city name, and container for displaying weather information.
+
+CSS Styling:
+
+/* Reset styles and global settings */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body styles */
+body {
+  /* Background image and other properties */
+}
+
+/* Styles for app-main container */
+.app-main {
+  /* Dimensions, margins, background color, etc. */
+}
+
+/* Input box styles */
+.input-box {
+  /* Styles for input box */
+}
+
+/* Styles for weather-body container */
+.weather-body {
+  /* Styles for weather information container */
+}
+
+/* Additional styles for various elements */
+
+1.Provides styling for different elements of the weather application interface.
+2.Defines layout, colors, fonts, and responsiveness for a visually appealing UI.
+
+
+JavaScript Logic:
+
+// Object to store API key and base URL
+const weatherApi = {
+  key: 'YOUR_API_KEY',
+  baseUrl: 'https://api.openweathermap.org/data/2.5/weather'
+}
+
+// Event listener for key press on input box
+searchInputBox.addEventListener('keypress', (event) => {
+  if (event.keyCode == 13) {
+    getWeatherReport(searchInputBox.value);
+  }
+});
+
+// Function to fetch weather data from API
+function getWeatherReport(city) {
+  // Fetch weather data using fetch API
+  fetch(`${weatherApi.baseUrl}?q=${city}&appid=${weatherApi.key}&units=metric`)
+    .then(weather => {
+      return weather.json(); // Convert response to JSON
+    })
+    .then(showWeatherReport); // Call function to display weather report
+}
+
+// Function to display weather report on the interface
+function showWeatherReport(weather) {
+  // Display weather information dynamically in HTML
+}
+
+// Other utility functions for formatting date, time, etc.
+
+1.Handles user input, API requests, data processing, and dynamic content generation.
+2.Fetches weather data from the OpenWeatherMap API and displays it on the interface.
+
+
+
